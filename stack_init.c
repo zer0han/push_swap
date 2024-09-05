@@ -19,7 +19,7 @@ static long	ft_atol(const char *s)
 
 	result = 0;
 	sign = 1;
-	while (*s == ' ' || (*s >= 9 && *s <= 13 ))
+	while (*s == ' ' || (*s >= 9 && *s <= 13))
 		s++;
 	if (*s == '-' || *s == '+')
 	{
@@ -57,14 +57,14 @@ static void	append_node(t_stack_node **stack, int n)
 void	init_stack_a(t_stack_node **a, char **argv)
 {
 	long	n;
-	int	i;
+	int		i;
 
 	i = 0;
 	while (argv[1])
 	{
 		if (error_syntax(argv[i]))
 			free_errors(a);
-		n = ft_atol(argv[i]); 
+		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
 		if (error_duplicate(*a, (int)n))
@@ -87,7 +87,8 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 	return (NULL);
 }
 
-void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	prep_for_push(t_stack_node **stack, t_stack_node *top_node,
+			char stack_name)
 {
 	while (*stack != top_node)
 	{
@@ -103,8 +104,7 @@ void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name
 			if (top_node -> above_median)
 				rb(stack, false);
 			else
-			rrb(stack, false);
+				rrb(stack, false);
 		}
 	}
 }
-

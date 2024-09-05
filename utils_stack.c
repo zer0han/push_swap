@@ -14,7 +14,7 @@
 
 int	stack_len(t_stack_node *stack)
 {
-	int	count; //store the node count
+	int	count;
 
 	if (!stack)
 		return (0);
@@ -29,7 +29,7 @@ int	stack_len(t_stack_node *stack)
 
 t_stack_node	*get_last(t_stack_node *stack)
 {
-	if(!stack)
+	if (!stack)
 		return (NULL);
 	while (stack -> next)
 		stack = stack -> next;
@@ -38,7 +38,7 @@ t_stack_node	*get_last(t_stack_node *stack)
 
 bool	sorted_stack(t_stack_node *stack)
 {
-	if (!stack);
+	if (!stack)
 		return (1);
 	while (stack -> next)
 	{
@@ -74,7 +74,7 @@ t_stack_node	*get_max(t_stack_node *stack)
 	long			max;
 	t_stack_node	*max_node;
 
-	if(!stack)
+	if (!stack)
 		return (NULL);
 	max = LONG_MIN;
 	while (stack)

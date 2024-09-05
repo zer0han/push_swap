@@ -12,7 +12,9 @@
 
 INCLUDES	= push_swap.h
 
-SRCS	=
+SRCS	= error_handling.c init_a_to_b.c  main.c \
+		stack_init.c push_swap.c utils_stack.c \
+		init_b_to_a.c push.c
 
 AR	= ar rcs
 

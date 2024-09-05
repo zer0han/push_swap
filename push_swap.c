@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-/* psudo code 
+/* psudo code
 * Declare pointers to the 2 data structures/linked lists, one for stack 'a' and one for 'b'
 ** set both pointers to NULL to avoid undefined behaviour and indicate we're starting with empty stacks
 * Handle input count errors, argument count must be 2 or more, and the second input must not be empty
@@ -40,3 +40,27 @@
 * last node
 * min and max nodes
 */
+int	main(int argc, char **argv)
+{
+	t_stack_node	*a;
+	t_stack_node	*b;
+
+	a = NULL;
+	b = NULL;
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	init_stack_a(&a, argv + 1);
+	if (!stack_sorted(a))
+	{
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_stacks(&a, &b);
+	}
+	free_stack(&a);
+	return (0);
+}
