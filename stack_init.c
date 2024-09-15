@@ -38,19 +38,19 @@ static void	append_node(t_stack_node **stack, int n)
 	t_stack_node	*last_node;
 
 	if (!stack)
-		return (NULL);
-	node -> next = NULL;
-	node -> nbr = n;
+		return ;
+	node->next = NULL;
+	node->nbr = n;
 	if (!(stack))
 	{
 		*stack = node;
-		node -> prev = NULL;
+		node->prev = NULL;
 	}
 	else
 	{
-		last_node = find_last(*stack);
-		last_node -> next = node;
-		node -> prev = last_node;
+		last_node = get_last(*stack);
+		last_node->next = node;
+		node->prev = last_node;
 	}
 }
 

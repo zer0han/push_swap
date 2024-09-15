@@ -14,11 +14,12 @@ INCLUDES	= push_swap.h
 
 SRCS	= error_handling.c init_a_to_b.c  main.c \
 		stack_init.c push_swap.c utils_stack.c \
-		init_b_to_a.c push.c
-
-AR	= ar rcs
-
+		init_b_to_a.c push.c reverse_rotate.c \
+		rotate.c swap.c
+		
 CC	= gcc
+
+NAME = push_swap
 
 CFLAGS	= -Wall -Wextra -Werror
 

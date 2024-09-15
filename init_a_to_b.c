@@ -19,7 +19,7 @@ void	current_index(t_stack_node *stack)
 
 	i = 0;
 	if (!stack)
-		return (NULL);
+		return ;
 	median = stack_len(stack) / 2;
 	while (stack)
 	{
@@ -54,7 +54,7 @@ static void	target_a(t_stack_node *a, t_stack_node *b)
 			current_b = current_b->next;
 		}
 		if (best_match_index == LONG_MIN)
-			a->target_node = find_max(b);
+			a->target_node = get_max(b);
 		else
 			a->target_node = target_node;
 		a = a->next;
@@ -105,7 +105,7 @@ void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 {
 	current_index(a);
 	current_index(b);
-	set_target_a(a, b);
+	target_a(a, b);
 	analysis_cost_a(a, b);
 	set_cheapest(a);
 }

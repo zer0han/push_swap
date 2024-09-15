@@ -23,7 +23,7 @@ int	error_syntax(char *str_n)
 		return (1);
 	while (*++str_n)
 	{
-		if (!(str_n >= '0' && *str_n <= '9'))
+		if (!(*str_n >= '0' && *str_n <= '9'))
 			return (1);
 	}
 	return (0);
@@ -48,7 +48,7 @@ void	free_stack(t_stack_node **stack)
 	t_stack_node	*current;
 
 	if (!stack)
-		return (NULL);
+		return ;
 	current = *stack;
 	while (current)
 	{
@@ -66,4 +66,3 @@ void	free_errors(t_stack_node **a)
 	ft_printf("Error\n");
 	exit (1);
 }
-	

@@ -47,6 +47,18 @@ void			pa(t_stack_node **a, t_stack_node **b, bool print);
 
 void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
+void			ra(t_stack_node **a, bool print);
+
+void			rb(t_stack_node **b, bool print);
+
+void			rr(t_stack_node **a, t_stack_node **b, bool print);
+
+void			rra(t_stack_node **a, bool print);
+
+void			rrb(t_stack_node **b, bool print);
+
+void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+
 void			free_stack(t_stack_node **stack);
 
 void			free_errors(t_stack_node **a);
