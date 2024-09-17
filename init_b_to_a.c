@@ -24,18 +24,18 @@ static void	target_b(t_stack_node *a, t_stack_node *b)
 		current_a = a;
 		while (current_a)
 		{
-			if (current_a -> nbr > b -> nbr && current_a -> nbr < i)
+			if (current_a->nbr > b->nbr && current_a->nbr < i)
 			{
-				i = current_a -> nbr;
+				i = current_a->nbr;
 				target_node = current_a;
 			}
-			current_a = current_a -> next;
+			current_a = current_a->next;
 		}
 		if (i == LONG_MAX)
-			b -> target_node = find_min(a);
+			b -> target_node = get_min(a);
 		else
-			b -> target_node;
-		b = b -> next;
+			b->target_node = target_node;
+		b = b->next;
 	}	
 }
 

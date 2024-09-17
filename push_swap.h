@@ -19,6 +19,9 @@
 # include <stdbool.h>
 # include <limits.h>
 # include "../push_swap/libft/libft.h"
+# include "../git_push_swao/libft/ft_printf.h"
+# include "../git_push_swao/libft/get_next_line.h"
+
 # include <string.h>
 
 typedef struct s_stack_node
@@ -47,6 +50,12 @@ void			pa(t_stack_node **a, t_stack_node **b, bool print);
 
 void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
+void			sa(t_stack_node **a, bool print);
+
+void			sb(t_stack_node **b, bool print);
+
+void			ss(t_stack_node **a, t_stack_node **b, bool print);
+
 void			ra(t_stack_node **a, bool print);
 
 void			rb(t_stack_node **b, bool print);
@@ -73,6 +82,10 @@ void			init_stack_a(t_stack_node **a, char **argv);
 
 void			prep_for_push(t_stack_node **stack,
 					t_stack_node *top_node, char stack_name);
+
+void			sort_three(t_stack_node **a);
+
+void			sort_algo(t_stack_node **a, t_stack_node **b);
 
 t_stack_node	*get_cheapest(t_stack_node *stack);
 
