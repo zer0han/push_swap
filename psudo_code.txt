@@ -1,0 +1,29 @@
+
+/* psudo code
+* Declare pointers to the 2 data structures/linked lists, one for stack 'a' and one for 'b'
+** set both pointers to NULL to avoid undefined behaviour and indicate we're starting with empty stacks
+* Handle input count errors, argument count must be 2 or more, and the second input must not be empty
+** if input of numbers is a string, call split () to split the substrings
+* initialize stack 'a' by appending each input number as a node to stack 'a'
+** handle integer overflow, duplicates, and syntax errors, input should only have digits and '-' & '+' signs
+*** if error free stack 'a' and return error
+** check for each input, if it is a long integer
+*** if input is string convert into long integer
+** append the nodes to stack 'a'
+* check if stack 'a' is sorted
+** if not sorted implement our sorting algorithm
+*** check for 2 numbers 
+**** if so simply swap the numbers
+*** check for 3 numbers
+**** if so, implement sort three algo
+*** check if the stack has more than 3 numbers
+**** if so implement turk algo need to write your own algo
+*/
+
+/* utils
+* function to handle errors
+* operations
+* stack length
+* last node
+* min and max nodes
+*/
