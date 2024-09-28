@@ -6,7 +6,7 @@
 /*   By: rdalal <rdalal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 17:48:48 by rdalal            #+#    #+#             */
-/*   Updated: 2024/09/25 13:35:09 by rdalal           ###   ########.fr       */
+/*   Updated: 2024/09/25 20:31:32 by rdalal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int		ft_print_ptr(unsigned long ptr);
 
 int		ft_print_hexa(unsigned int nbr, int uppercase);
 
-void	ft_putchar_fd(char c, int fd);
+void	ft_printchar_fd(char c, int fd);
 
 #endif

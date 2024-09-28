@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdalal <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: rdalal <rdalal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:03:54 by rdalal            #+#    #+#             */
-/*   Updated: 2024/06/06 15:03:56 by rdalal           ###   ########.fr       */
+/*   Updated: 2024/09/25 20:31:42 by rdalal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	ft_put_ptr(unsigned long nbr)
 		ft_put_ptr(nbr % 16);
 	}
 	else
-		ft_putchar_fd(base[nbr], 1);
+		ft_printchar_fd(base[nbr], 1);
 }
 
 int	ft_print_ptr(unsigned long ptr)

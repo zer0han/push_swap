@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdalal <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: rdalal <rdalal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:03:21 by rdalal            #+#    #+#             */
-/*   Updated: 2024/06/06 15:03:26 by rdalal           ###   ########.fr       */
+/*   Updated: 2024/09/25 20:32:00 by rdalal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_printchar_fd(char c, int fd)
 {
 	write (fd, &c, 1);
 }

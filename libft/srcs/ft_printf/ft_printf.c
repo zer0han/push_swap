@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdalal <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: rdalal <rdalal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:25:56 by rdalal            #+#    #+#             */
-/*   Updated: 2024/07/01 14:45:25 by rdalal           ###   ########.fr       */
+/*   Updated: 2024/09/25 20:32:19 by rdalal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_format(char type, va_list args)
 	if (type == '%')
 		return (write(1, "%", 1));
 	else if (type == 'c')
-		return (ft_putchar_fd(va_arg(args, int), 1), 1);
+		return (ft_printchar_fd(va_arg(args, int), 1), 1);
 	else if (type == 's')
 		return (ft_print_str(va_arg(args, char *)));
 	else if (type == 'p')

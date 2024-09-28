@@ -16,16 +16,19 @@ CC	= gcc
 
 CFLAGS = -Wextra -Wall -Werror
 
-HEAD	= inlcudes/	
+HEAD	= includes/
 
-SRCS_PS	= error_handling.c init_a_to_b.c \
-		stack_init.c push_swap.c utils_stack.c \
-		init_b_to_a.c push.c reverse_rotate.c \
-		rotate.c swap.c sort_algo.c sort_three.c
+SRCS_C	= push.c reverse_rotate.c rotate.c swap.c
 
-SRCS_PATH	=	srcs/
+SRCS_UTLS	=	error_handling.c init_a_to_b.c \
+				init_b_to_a.c push_swap.c sort_algo.c \
+				sort_three.c stack_init.c utils_stack.c
 
-SRCS	=	$(addprefix $(SRCS_PATH), $(SRCS_PS))
+SRCS_C_PATH	= srcs/commands/
+SRCS_UTLS_PATH	= srcs/utils/
+
+SRCS	=	$(addprefix $(SRCS_C_PATH), $(SRCS_C)) \
+			$(addprefix $(SRCS_UTLS_PATH), $(SRCS_UTLS))
 
 LIBFT_H_PATH	= libft/includes/
 
@@ -41,7 +44,7 @@ all: $(NAME)
 OBJS	= $(SRCS:.c=.o)
 
 $(NAME):  $(OBJS) $(LIBFT)
-		$(CC) $(CFLAGS) $(LIBFT) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 .c.o:
 		$(CC) $(CFLAGS) -c $< -o $@ -I$(HEAD) -I$(LIBFT_H_PATH)
