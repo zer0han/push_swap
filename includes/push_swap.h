@@ -72,6 +72,8 @@ void			free_stack(t_stack_node **stack);
 
 void			free_errors(t_stack_node **a);
 
+void			free_split(char **split);
+
 void			current_index(t_stack_node *stack);
 
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);
@@ -96,15 +98,3 @@ t_stack_node	*get_min(t_stack_node *stack);
 t_stack_node	*get_max(t_stack_node *stack);
 
 #endif
-
-//handle errors
-
-//stack initiation
-
-//nodes initiation
-
-//stack utils
-
-//commands
-
-//algorithms

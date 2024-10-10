@@ -12,6 +12,49 @@
 
 #include "../includes/push_swap.h"
 
+static int	valid_input(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (error_syntax(argv[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+static void	handle_cases(t_stack_node **a, int argc, char **argv)
+{
+	char	**split_argv;
+
+	if (argc == 2)
+	{
+		split_argv = ft_split(argv[1], ' ');
+		if (!split_argv)
+			return ;
+		if (!valid_input(split_argv))
+		{
+			free_split(split_argv);
+			free_errors(a);
+			return ;
+		}
+		init_stack_a(a, split_argv);
+		free_split(split_argv);
+	}
+	else
+	{
+		if (!valid_input(argv + 1))
+		{
+			free_errors(a);
+			return ;
+		}
+		init_stack_a(a, argv +1);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
@@ -21,15 +64,13 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	init_stack_a(&a, argv + 1);
+	handle_cases(&a, argc, argv);
 	if (!sorted_stack(a))
 	{
 		if (stack_len(a) == 2)
 			sa(&a, false);
 		else if (stack_len(a) == 3)
-			sort_three(&a);
+			sort_algo(&a, &b);
 		else
 			sort_algo(&a, &b);
 	}

@@ -66,3 +66,18 @@ void	free_errors(t_stack_node **a)
 	ft_printf("Error\n");
 	exit(1);
 }
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	if (!split)
+		return ;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
