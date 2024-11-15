@@ -36,27 +36,35 @@ LIBFT_PATH	=	libft/
 
 LIBFT	= $(LIBFT_PATH)libft.a
 
-$(LIBFT):
-			$(MAKE) -C $(LIBFT_PATH)
+OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)
 
-OBJS	= $(SRCS:.c=.o)
-
-$(NAME):  $(OBJS) $(LIBFT)
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
-
-.c.o:
-		$(CC) $(CFLAGS) -c $< -o $@ -I$(HEAD) -I$(LIBFT_H_PATH)
-
-clean:
-			rm -f $(OBJS)
+$(LIBFT):
 			$(MAKE) -C $(LIBFT_PATH)
 
-fclean: clean
-			rm -f $(NAME)
+$(NAME):	$(OBJS) $(LIBFT) $(HEAD)
+			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+.c.o:
+			$(CC) $(CFLAGS) -c $< -o $@ -I$(HEAD) -I$(LIBFT_H_PATH)
+
+clean:	libft-clean root-clean
+
+libft-clean:
+			$(MAKE) -C $(LIBFT_PATH) clean
+	
+root-clean:
+			rm -f $(OBJS)
+
+fclean: libft-fclean root-fclean
+
+libft-fclean:
 			$(MAKE) -C $(LIBFT_PATH) fclean
+
+root-fclean: root-clean
+			rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re libft libft-clean libft-fclean root-clean root-fclean

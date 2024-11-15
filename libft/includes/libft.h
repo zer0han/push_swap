@@ -6,7 +6,7 @@
 /*   By: rdalal <rdalal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 20:05:33 by rdalal            #+#    #+#             */
-/*   Updated: 2024/10/08 14:22:43 by rdalal           ###   ########.fr       */
+/*   Updated: 2024/11/15 18:09:12 by rdalal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+void	free_split(char **split, int word_all);
 
 char	*ft_itoa(int n);
 

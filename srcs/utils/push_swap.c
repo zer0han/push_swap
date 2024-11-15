@@ -37,12 +37,12 @@ static void	handle_cases(t_stack_node **a, int argc, char **argv)
 			return ;
 		if (!valid_input(split_argv))
 		{
-			free_split(split_argv);
+			free_split(split_argv, argc);
 			free_errors(a);
 			return ;
 		}
 		init_stack_a(a, split_argv);
-		free_split(split_argv);
+		free_split(split_argv, argc);
 	}
 	else
 	{
@@ -51,7 +51,7 @@ static void	handle_cases(t_stack_node **a, int argc, char **argv)
 			free_errors(a);
 			return ;
 		}
-		init_stack_a(a, argv +1);
+		init_stack_a(a, argv + 1);
 	}
 }
 
