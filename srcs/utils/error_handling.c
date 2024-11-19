@@ -62,29 +62,11 @@ void	free_stack(t_stack_node **stack)
 
 void	free_errors(t_stack_node **a)
 {
-	t_stack_node	*temp;
-
-	while (*a)
+	if (a && *a)
 	{
-		temp = *a;
-		*a = (*a)->next;
-		free(temp);
+		free_stack(a);
+		*a = NULL;
 	}
 	ft_printf("Error\n");
 	exit(1);
 }
-
-/*void	free_split(char **split)
-{
-	int	i;
-
-	i = 0;
-	if (!split)
-		return ;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-}*/

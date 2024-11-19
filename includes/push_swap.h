@@ -46,8 +46,6 @@ int				main(int argc, char **argv);
 
 bool			sorted_stack(t_stack_node *stack);
 
-long			ft_atol(const char *s);
-
 void			append_node(t_stack_node **stack, int n);
 
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
@@ -75,8 +73,6 @@ void			rrr(t_stack_node **a, t_stack_node **b, bool print);
 void			free_stack(t_stack_node **stack);
 
 void			free_errors(t_stack_node **a);
-
-//void			free_split(char **split);
 
 void			current_index(t_stack_node *stack);
 

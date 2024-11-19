@@ -6,7 +6,7 @@
 /*   By: rdalal <rdalal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:31:00 by rdalal            #+#    #+#             */
-/*   Updated: 2024/11/15 19:05:14 by rdalal           ###   ########.fr       */
+/*   Updated: 2024/11/19 13:13:18 by rdalal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static size_t	ft_sep(char c, char sep)
 	return (0);
 }
 
-static int	ft_word_count(const char *str, char c)
+int	ft_word_count(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -56,7 +56,6 @@ static char	*ft_sepstrdup(char const *s, char c)
 		i++;
 	}
 	dest[i] = '\0';
-	free(dest);
 	return (dest);
 }
 
@@ -68,7 +67,10 @@ void	free_split(char **split, int word_all)
 	while (i < word_all)
 	{
 		if (split[i])
+		{
 			free (split[i]);
+			split[i] = NULL;
+		}
 		i++;
 	}
 	free (split);

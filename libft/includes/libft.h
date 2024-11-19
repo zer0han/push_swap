@@ -6,7 +6,7 @@
 /*   By: rdalal <rdalal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 20:05:33 by rdalal            #+#    #+#             */
-/*   Updated: 2024/11/15 18:09:12 by rdalal           ###   ########.fr       */
+/*   Updated: 2024/11/19 15:26:51 by rdalal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 
 int		ft_atoi(const char *str);
+
+int		ft_word_count(const char *str, char c);
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
@@ -87,6 +89,8 @@ char	*ft_strrchr(char *str, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+long	ft_atol(const char *s);
 
 typedef struct s_list
 {

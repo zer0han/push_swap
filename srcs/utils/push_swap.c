@@ -12,15 +12,22 @@
 
 #include "../includes/push_swap.h"
 
-static int	valid_input(char **argv)
+static int	valid_input(t_stack_node **a, char **argv)
 {
-	int	i;
+	long	n;
+	int		i;
 
 	i = 0;
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
 			return (0);
+		n = ft_atol(argv[i]);
+		if (n > INT_MAX || n < INT_MIN)
+			return (0);
+		if (error_dup(*a, (int)n))
+			return (0);
+		append_node(a, (int)n);
 		i++;
 	}
 	return (1);
@@ -34,24 +41,23 @@ static void	handle_cases(t_stack_node **a, int argc, char **argv)
 	{
 		split_argv = ft_split(argv[1], ' ');
 		if (!split_argv)
-			return ;
-		if (!valid_input(split_argv))
-		{
-			free_split(split_argv, argc);
 			free_errors(a);
-			return ;
+		if (!valid_input(a, split_argv))
+		{
+			free_split(split_argv, ft_word_count(argv[1], ' '));
+			free_stack(a);
+			free_errors(a);
 		}
-		init_stack_a(a, split_argv);
-		free_split(split_argv, argc);
+		free_split(split_argv, ft_word_count(argv[1], ' '));
+		split_argv = NULL;
 	}
 	else
 	{
-		if (!valid_input(argv + 1))
+		if (!valid_input(a, argv + 1))
 		{
+			free_stack(a);
 			free_errors(a);
-			return ;
 		}
-		init_stack_a(a, argv + 1);
 	}
 }
 

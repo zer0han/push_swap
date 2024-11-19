@@ -12,26 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-long	ft_atol(const char *s)
-{
-	long	result;
-	int		sign;
-
-	result = 0;
-	sign = 1;
-	while (*s == ' ' || (*s >= 9 && *s <= 13))
-		s++;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign = -1;
-		s++;
-	}
-	while (ft_isdigit(*s))
-		result = result * 10 + (*s++ - '0');
-	return (result * sign);
-}
-
 void	append_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
